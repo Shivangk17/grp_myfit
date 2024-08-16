@@ -5,6 +5,7 @@ import { Pagination } from 'swiper/modules';
 import 'swiper/css/bundle';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import { BrowserRouter, Router, Route, Routes, Link } from 'react-router-dom'
 
 
 export default function Home() {
@@ -26,6 +27,9 @@ export default function Home() {
                         <span>be strong, be fit</span>
                         <h3>Make yourself stronger than your excuses.</h3>
                         <a href="/" className="btn1">get started</a>
+                        {/* <Router>
+
+                        </Router> */}
                     </div>
                 </SwiperSlide>
 

@@ -4,6 +4,7 @@ import '../style1.css';
 export default function About() {
     return (
         <div>
+            <br /><br />
             <section className="about" id="about">
                 <div className="image">
                     <img src="/images/about-img.jpg" />
