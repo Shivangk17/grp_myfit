@@ -36,7 +36,7 @@ export default function Home() {
                     <div className="content">
                         <span>be strong, be fit</span>
                         <h3>Make yourself stronger than your excuses.</h3>
-                        <a href="/" className="btn">get started</a>
+                        <a href="/" className="btn1">get started</a>
                     </div>
                 </SwiperSlide>
 
@@ -47,7 +47,7 @@ export default function Home() {
                     <div className="content">
                         <span>be strong, be fit</span>
                         <h3>Make yourself stronger than your excuses.</h3>
-                        <a href="/" className="btn">get started</a>
+                        <a href="/" className="btn1">get started</a>
                     </div>
                 </SwiperSlide>
             </Swiper>
