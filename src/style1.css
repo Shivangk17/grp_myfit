@@ -87,17 +87,35 @@ section {
     }
   }
 
+  .navbar1 Link:hover{
+    background-color: var(--red);
+    transition: 0.5s;
+  }
   .navbar1 li {
     display: inline-block;
     padding: 1.5rem 2rem;
     font-size: 1.7rem;
     color: var(--white);
-
-    &:hover {
-      background: var(--red);
-    }
+    /* &:hover {
+      background-color: var(--red);
+      transition: 0.5s;
+    } */
   }
 }
+
+/* .page-link{
+  background-color:var(--red);
+  color: var(--white);
+  border-radius: 10%;
+  font-variant: small-caps;
+  /* display: inline; */
+  /* float: inline-end; */
+  /* &:hover{
+    background-color: var(--white);
+    color: var(--red);
+  }
+} */ 
+
 
 #menu-btn {
   font-size: 3rem;
@@ -539,3 +557,4 @@ section {
   /* height: auto;
   width: auto; */
 }
+
