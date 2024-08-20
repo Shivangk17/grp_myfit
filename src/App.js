@@ -64,7 +64,7 @@ section {
           <Routes>
             <Route exact path='/' element={<><Home /><About /><Calculate_BMI /><Footer /></>} />
             <Route path='about' element={<About />} />
-            <Route path='directory' element={<Directory />} />
+            <Route path='directory' element={<><Directory /><Footer /></>} />
             <Route path='diet' element={<Diet />} />
           </Routes>
           <header className="header">
