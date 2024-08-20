@@ -613,7 +613,7 @@ section {
 }
 
 .body-map__muscle path:hover {
-  fill: crimson;
+  fill: var(--red);
 }
 
 @media screen and (max-width:600px) {
