@@ -72,12 +72,12 @@ section {
 
             <div id="menu-btn" className="fas fa-bars"> </div>
             <nav className="navbar1">
-              <ul>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/about">About</Link></li>
-                <li><Link to="/directory">Directory</Link></li>
-                <li><Link to="/diet">Diet</Link></li>
-              </ul>
+              
+              <Link to="/">Home</Link>
+              <Link to="/about">About</Link>
+              <Link to="/directory">Directory</Link>
+              <Link to="/diet">Diet</Link>
+              
 
 
             </nav>

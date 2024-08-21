@@ -1,21 +1,53 @@
 import { React, useState } from 'react'
 
 export default function Calculate_BMI() {
-    const [height, setHeight] = useState(0)
-    const [weight, setWeight] = useState(0)
-    const [message, setMessage] = useState("")
+    var [height, setHeight] = useState('Height')
+    var [weight, setWeight] = useState('Weight')
+    var [message, setMessage] = useState("")
     function calculatebmi(e) {
         e.preventDefault()
-        var cm = height / 100
-        var bmi = Math.round(weight / (cm * cm))
-        setMessage(bmi)
-        // if (bmi < 18.5) {
-        //     setMessage("Your BMI is {bmi} and you are skinny")
-        // }
-        // else if (bmi < 25) {
+    if (height === '' || weight === '') {
+        // message.classList.remove('color-green')
+        // message.classList.add('color-red')
+        //show message
+        setMessage('Fill in the Height and Weight')
 
-        // }
+        //remove message three seconds
+        setTimeout(() => {
+            setMessage('')
+        }, 3000)
+    } else {
+        //BMI Formula
+        const cm = height / 100,
+            kg = weight,
+            bmi = Math.round(kg / (cm * cm))
+
+        if (bmi < 18.5) {
+            //Add color and display message
+            // calculateMessage.classList.add('color-red')
+            setMessage(`Your BMI is ${bmi} and you are skinny`)
+
+        }
+        else if (bmi < 25) {
+            // calculateMessage.classList.add('color-red')
+            setMessage(`Your BMI is ${bmi} and you are healthy`)
+        }
+        else {
+            // calculateMessage.classList.add('color-red')
+            setMessage(`Your BMI is ${bmi} and you are overweight`)
+        }
+
+        
+
+        //Remove message in four seconds
+        setTimeout(() => {
+            setMessage('')
+            //To clear the input field
+            setHeight('Height')
+            setWeight('Weight')
+        }, 5000)
     }
+}
     return (
         <div>
             <section className="calculate section">
