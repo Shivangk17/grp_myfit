@@ -7,6 +7,9 @@ import { createGlobalStyle } from 'styled-components';
 import { BrowserRouter, Router, Route, Routes, Link, Outlet } from 'react-router-dom';
 import Directory from './Components/Directory';
 import Diet from './Components/Diet';
+import Login from './Components/Login'
+import Signup from './Components/Signup'
+import './user.css';
 
 
 
@@ -66,18 +69,20 @@ section {
             <Route path='about' element={<About />} />
             <Route path='directory' element={<><Directory /><Footer /></>} />
             <Route path='diet' element={<Diet />} />
+            <Route path='login' element={<Login />} />
+            <Route path='signup' element={<Signup />} />
           </Routes>
           <header className="header">
             <a href="/" className="logo"><span>MY</span>FIT</a>
 
             <div id="menu-btn" className="fas fa-bars"> </div>
             <nav className="navbar1">
-              
+
               <Link to="/">Home</Link>
               <Link to="/about">About</Link>
               <Link to="/directory">Directory</Link>
               <Link to="/diet">Diet</Link>
-              
+
 
 
             </nav>

@@ -2,14 +2,13 @@ import React from 'react';
 
 import '../style1.css';
 export default function About() {
-    return (
+   return (
         <div>
             <br /><br />
             <section className="about" id="about">
                 <div className="image">
                     <img src="/images/about-img.jpg" />
                 </div>
-
                 <div className="content">
                     <span>about us</span>
                     <h3 className="title">Everyday is a chance to become better</h3>
