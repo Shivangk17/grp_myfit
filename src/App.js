@@ -16,7 +16,7 @@ function App() {
   const GlobalStyle = createGlobalStyle`
   
 html {
-  font-size: 50.5%;
+  font-size: 62.5%;
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;
   overflow-x: hidden;
