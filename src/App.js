@@ -1,10 +1,10 @@
 import About from './Components/About';
-import Navbar from './Components/Navbar';
+// import Navbar from './Components/Navbar';
 import Home from './Components/Home';
 import Footer from './Components/Footer';
 import Calculate_BMI from './Components/Calculate_BMI';
 import { createGlobalStyle } from 'styled-components';
-import { BrowserRouter, Router, Route, Routes, Link, Outlet } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Link, Outlet } from 'react-router-dom';
 import Directory from './Components/Directory';
 import Diet from './Components/Diet';
 import Login from './Components/Login'
@@ -19,7 +19,7 @@ function App() {
   const GlobalStyle = createGlobalStyle`
   
 html {
-  font-size: 50.5%;
+  font-size: 60.5%;
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;
   overflow-x: hidden;
@@ -67,7 +67,7 @@ section {
           <Routes>
             <Route exact path='/' element={<><Home /><About /><Calculate_BMI /><Footer /></>} />
             <Route path='about' element={<About />} />
-            <Route path='directory' element={<Directory />} />
+            <Route path='directory' element={<><Home /><Directory /><Footer /></>} />
             <Route path='diet' element={<Diet />} />
             <Route path='login' element={<Login />} />
             <Route path='signup' element={<Signup />} />

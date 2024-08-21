@@ -22,9 +22,7 @@ export default function Signup() {
     alert('Form submitted:');
   };
 
-  const[email,setEmail] = useState("")
-  const[password1,setPassword1] = useState("")
-  const[password2,setPassword2] = useState("")
+ 
   return (
     <div className='main-page'>
       <br /><br />
@@ -53,15 +51,15 @@ export default function Signup() {
           value={signupData.password2}
           onChange={handleChange}
           required/>
-            <br/> <br/> <br/> <br/> <br/>
+            <br/> <br/> <br/> 
             <button className='submit'type='submit' onClick={(e)=>{
-              if(signupData.password1 != signupData.password2){
+              if(signupData.password1 !== signupData.password2){
                 e.preventDefault()
                  alert("OOPS! Password didn't matched")
               }
             }}>Submit</button>
             <div className='div-footer'>
-            <br/> <br/><br/>
+            <br/> <br/> <br/> 
             <p className='need-help'>Need help?</p>
             </div>
             

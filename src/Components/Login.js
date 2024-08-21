@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import {Link} from 'react-router-dom'
-import Signup from './Signup'
 import '../user.css';
 
 export default function Login() {
@@ -44,7 +43,7 @@ export default function Login() {
             {/* <p className='new-user' onClick={()=>{
               return(<Signup/>)
             }}>New to MyFit?</p> */}
-            <br/> <br/><br/>
+            {/* <br/> <br/><br/> */}
             <p className='forgot-pass'>Forgot password?</p>
             </div>
             

@@ -1,8 +1,8 @@
 import { React, useState } from 'react'
 
 export default function Calculate_BMI() {
-    const [height, setHeight] = useState(0)
-    const [weight, setWeight] = useState(0)
+    const [height, setHeight] = useState()
+    const [weight, setWeight] = useState()
     const [message, setMessage] = useState("")
     function calculatebmi(e) {
         e.preventDefault()

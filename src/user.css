@@ -149,7 +149,7 @@
 }
 
 .new-user{
-  margin-top: 3%;
+  margin-top: -5%;
   float: left;
   margin-left: 8%;
   font-size: small;
@@ -180,6 +180,53 @@
 }
 
 
+@media ( (min-width:481px) and (max-width: 768px)) {
+  .login-body{
+    margin-top: 200px;
+    /* padding-top: 160px; */
+    border: 2px solid var(--red);
+    background-color: var(--black);
+    height: 500px;
+    width: 450px;
+  }
+  .signup-body{
+    margin-top: 200px;
+      /* padding-top: 160px; */
+      height: 500px;
+      width: 450px;
+      border-radius: 10%;
+      box-shadow: 1px 1px 5px 2px red;
+  }
+  .input{
+    background-color: var(--black);
+    color:var(--white);
+    text-transform: none; /*To stop text from transfroming every first letter*/
+    height: 50px;
+    width: 340px;
+    &::placeholder{
+      font-size: large;
+    }
+  }  
+  .submit{
+    margin-top: 2%;
+    font-size: medium;
+  }
+  .forgot-pass{
+    float: right;
+    margin-left: 100px;
+    margin-top: 7%;
+    margin-right: 3%;
+    font-size: medium;
+  }
+  .new-user{
+    margin-top: 7%;
+    font-size: medium;
+  }
+  .icon{
+    color: white;
+    font-size: x-large;
+  }
+}
 
 @media (max-width: 480px) {
   .login-body{
@@ -211,5 +258,9 @@
     margin-top: -7%;
     margin-right: 3%;
     font-size: small;
+  }
+  .icon{
+    color: white;
+    font-size: x-large;
   }
 }
