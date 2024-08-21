@@ -32,6 +32,8 @@ export default function Login() {
             <br/>
             <hr className='horizontal-line'/>
             <br/> <br/><br/><br/>
+
+            
             <p className='icon'>@ </p><input  type='email' placeholder='email-id' className='input' id="email" name="email" value={loginData.email} onChange={handleChange} required/>
             <br/> <br/> <br/>
             <p className='icon'>🗝</p><input type='password' placeholder='password (between 6 - 10 characters)' className='input' maxLength={10} id="password" name="password" value={loginData.password} onChange={handleChange} required />
