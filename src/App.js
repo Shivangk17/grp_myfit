@@ -80,7 +80,7 @@ section {
               <Link to="/">Home</Link>
               <Link to="/about">About</Link>
               <Link to="/directory">Directory</Link>
-              <Link to="/diet">Diet</Link>
+              
               <Link to="/login">Login</Link>
               <Link to="/signup">Signup</Link>
             </nav>
