@@ -87,10 +87,11 @@ section {
     }
   }
 
-  .navbar1 Link:hover{
+  .navbar1 Link:hover {
     background-color: var(--red);
     transition: 0.5s;
   }
+
   .navbar1 li {
     display: inline-block;
     padding: 1.5rem 2rem;
@@ -109,12 +110,12 @@ section {
   border-radius: 10%;
   font-variant: small-caps;
   /* display: inline; */
-  /* float: inline-end; */
-  /* &:hover{
+/* float: inline-end; */
+/* &:hover{
     background-color: var(--white);
     color: var(--red);
   }
-} */ 
+} */
 
 
 #menu-btn {
