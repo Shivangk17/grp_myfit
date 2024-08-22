@@ -67,7 +67,7 @@ section {
           <Routes>
             <Route exact path='/' element={<><Home /><About /><Calculate_BMI /><Footer /></>} />
             <Route path='about' element={<About />} />
-            <Route path='directory' element={<><Home /><Directory /><Footer /></>} />
+            <Route path='directory' element={<><Directory /><Footer /></>} />
             <Route path='diet' element={<Diet />} />
             <Route path='login' element={<Login />} />
             <Route path='signup' element={<Signup />} />
@@ -77,14 +77,14 @@ section {
 
             <div id="menu-btn" className="fas fa-bars"> </div>
             <nav className="navbar1">
-              <ul>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/about">About</Link></li>
-                <li><Link to="/directory">Directory</Link></li>
-                <li><Link to="/diet">Diet</Link></li>
-                <li><Link to="/login" className='page-link'>login</Link></li>
-                <li><Link to="/signup" className='page-link'>signup</Link></li>
-              </ul>
+              
+              <Link to="/">Home</Link>
+              <Link to="/about">About</Link>
+              <Link to="/directory">Directory</Link>
+              <Link to="/diet">Diet</Link>
+              
+
+
             </nav>
 
           </header>
