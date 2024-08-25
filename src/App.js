@@ -10,6 +10,21 @@ import Diet from './Components/Diet';
 import Login from './Components/Login'
 import Signup from './Components/Signup'
 import './user.css';
+import Abs from './Body-parts/Abs';
+import Biceps from './Body-parts/Biceps';
+import Calves from './Body-parts/Calves';
+import Chest from './Body-parts/Chest';
+import Forearms from './Body-parts/ForeArms';
+import Glutes from './Body-parts/Glutes';
+import Hamstring from './Body-parts/Hamstring';
+import Lats from './Body-parts/Lats';
+import LowerBack from './Body-parts/LowerBack';
+import Obliques from './Body-parts/Obliques';
+import Quads from './Body-parts/Quads';
+import Shoulders from './Body-parts/Shoulders';
+import Traps from './Body-parts/Traps';
+import TrapsMiddle from './Body-parts/TrapsMiddle';
+import Triceps from './Body-parts/Triceps';
 
 
 
@@ -71,6 +86,24 @@ section {
             <Route path='diet' element={<Diet />} />
             <Route path='login' element={<Login />} />
             <Route path='signup' element={<Signup />} />
+
+
+
+            <Route path='abs' element={<Abs />} />
+            <Route path='biceps' element={<Biceps />} />
+            <Route path='calves' element={<Calves />} />
+            <Route path='chest' element={<Chest />} />
+            <Route path='forearms' element={<Forearms />} />
+            <Route path='glutes' element={<Glutes />} />
+            <Route path='hamstring' element={<Hamstring />} />
+            <Route path='lats' element={<Lats />} />
+            <Route path='lowerback' element={<LowerBack />} />
+            <Route path='obliques' element={<Obliques />} />
+            <Route path='quads' element={<Quads />} />
+            <Route path='shoulders' element={<Shoulders />} />
+            <Route path='traps' element={<Traps />} />
+            <Route path='trapsmiddle' element={<TrapsMiddle />} />
+            <Route path='triceps' element={<Triceps />} />
           </Routes>
           <header className="header">
             <a href="/" className="logo"><span>MY</span>FIT</a>
