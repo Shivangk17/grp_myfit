@@ -137,7 +137,7 @@ section {
     display: flex;
     align-items: center;
 
-    .content {
+    .content1 {
       width: 60rem;
 
       span {
@@ -191,7 +191,7 @@ section {
     }
   }
 
-  .content {
+  .content1 {
     flex: 1 1 42rem;
 
     span {
@@ -472,7 +472,7 @@ section {
   .home .slide {
     padding: 2rem 5%;
 
-    .content {
+    .content1 {
       width: 50rem;
 
       h3 {
@@ -520,7 +520,7 @@ section {
       margin-top: 5rem;
     }
 
-    .content .title {
+    .content1 .title {
       font-size: 3rem;
     }
   }
