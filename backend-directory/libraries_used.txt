@@ -1,0 +1,6 @@
+
+backend-directory/
+    pip install django
+    pip install django-rest-framework
+    pip install django-cors-headers 
+

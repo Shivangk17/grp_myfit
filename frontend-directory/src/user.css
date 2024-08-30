@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Red+Hat+Display:wght@400;700;900&display=swap");
+
+* {
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  transition: all .2s linear;
+}
+:root{
+  --red:red;
+  --black:black;
+  --white:white;
+  --grey:grey;
+}
+.page-button{
+    background-color:var(--red);
+    color: var(--white);
+    border-radius: 10%;
+    font-variant: small-caps;
+    display: inline;
+    float: inline-end;
+    &:hover{
+      background-color: var(--white);
+      color: var(--red);
+    }
+  }
+  
+  .page-link{
+    background-color: transparent;
+    &:hover{
+      background-color: none;
+    }
+  }
+
+  .login-button:hover{
+    background-color: var(--white);
+    color: var(--black);
+  }
+  
+  .main-page{
+    height: 580px;
+    background-color: var(--black);
+    color: var(--white);
+  }
+
+.login-body{
+    margin-top: 95px;
+    /* padding-top: 160px; */
+    border: 2px solid var(--red);
+    background-color: var(--black);
+    height: 400px;
+    width: 400px;
+    border-radius: 10%;
+    box-shadow: 1px 1px 5px 2px red;
+}
+
+.signup-body{
+  margin-top: 95px;
+    /* padding-top: 160px; */
+    border: 2px solid var(--red);
+    background-color: var(--black);
+    height: 430px;
+    width: 400px;
+    border-radius: 10%;
+    box-shadow: 1px 1px 5px 2px red;
+}
+
+
+.div-header{
+  padding-top: 20px;
+  margin-top: 0px;
+  /* margin-left: 50px; */
+  /* float: left; */
+  font-size:x-large;
+  font-variant: small-caps;
+  font-family: "Nunito", sans-serif;
+  color: var(--white);
+}
+.horizontal-line{
+
+  height: 1px;
+  width: 300px;
+  background-color: var(--red);
+}
+.icon{
+  display: inline;
+  font-size: x-large;
+  margin-right: 5%;
+}
+.input{
+  background-color: var(--black);
+  color:var(--white);
+  text-transform: none; /*To stop text from transfroming every first letter*/
+  height: 40px;
+  width: 320px;
+  border: 1px solid var(--red);
+  padding-left: 20px;
+
+  &::placeholder{
+    color: var(--grey);
+  }
+  &:focus{
+    border: 1px solid var(--white);
+  }
+}
+
+.submit{
+  background-color:var(--red);
+  height: 40px;
+  width: 100px;
+  border-radius: 20%;
+  margin-left: 5%;
+  color: var(--white);
+  cursor:pointer;
+
+  &:hover{
+    color: var(--red);
+    background-color: var(--white);
+  }
+  
+}
+
+.div-footer{
+  /* background-color: blue; */
+  display: block;
+
+}
+
+.forgot-pass{
+  float: right;
+  margin-left: 100px;
+  margin-bottom: 5%;
+  margin-top: -5%;
+  margin-right: 3%;
+  font-size: small;
+  cursor: pointer;
+  text-transform: none;
+
+  &:hover{
+    color: var(--red);
+    text-decoration: underline;
+  }
+}
+
+.new-user{
+  margin-top: -5%;
+  float: left;
+  margin-left: 8%;
+  font-size: small;
+  display: block;
+  cursor: pointer;
+  text-transform: none;
+  color: var(--white);
+  &:hover{
+    color: var(--red);
+    text-decoration: underline;
+  }
+}
+
+.need-help{
+  float: right;
+  margin-left: 100px;
+  margin-bottom: 5%;
+  margin-top: -5%;
+  margin-right: 4%;
+  font-size: small;
+  cursor: pointer;
+  text-transform: none;
+
+  &:hover{
+    color: var(--red);
+    text-decoration: underline;
+  }
+}
+
+
+@media ( (min-width:481px) and (max-width: 768px)) {
+  .login-body{
+    margin-top: 200px;
+    /* padding-top: 160px; */
+    border: 2px solid var(--red);
+    background-color: var(--black);
+    height: 500px;
+    width: 450px;
+  }
+  .signup-body{
+    margin-top: 200px;
+      /* padding-top: 160px; */
+      height: 500px;
+      width: 450px;
+      border-radius: 10%;
+      box-shadow: 1px 1px 5px 2px red;
+  }
+  .input{
+    background-color: var(--black);
+    color:var(--white);
+    text-transform: none; /*To stop text from transfroming every first letter*/
+    height: 50px;
+    width: 340px;
+    &::placeholder{
+      font-size: large;
+    }
+  }  
+  .submit{
+    margin-top: 2%;
+    font-size: medium;
+  }
+  .forgot-pass{
+    float: right;
+    margin-left: 100px;
+    margin-top: 7%;
+    margin-right: 3%;
+    font-size: medium;
+  }
+  .new-user{
+    margin-top: 7%;
+    font-size: medium;
+  }
+  .icon{
+    color: white;
+    font-size: x-large;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-body{
+    margin-top: 80px;
+    /* padding-top: 160px; */
+    border: 2px solid var(--red);
+    background-color: var(--black);
+    height: 400px;
+    width: 350px;
+  }
+  .signup-body{
+    margin-top: 80px;
+      /* padding-top: 160px; */
+      height: 430px;
+      width: 350px;
+      border-radius: 10%;
+      box-shadow: 1px 1px 5px 2px red;
+  }
+  .input{
+    background-color: var(--black);
+    color:var(--white);
+    text-transform: none; /*To stop text from transfroming every first letter*/
+    height: 40px;
+    width: 260px;
+  }  
+  .forgot-pass{
+    float: right;
+    margin-left: 100px;
+    margin-top: -7%;
+    margin-right: 3%;
+    font-size: small;
+  }
+  .icon{
+    color: white;
+    font-size: x-large;
+  }
+}
+
+.nav-profile-pic{
+  height: 90%;
+  width: 5%;
+  float: inline-end;
+}
