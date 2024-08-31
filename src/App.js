@@ -9,6 +9,7 @@ import Directory from './Components/Directory';
 import Diet from './Components/Diet';
 import Login from './Components/Login'
 import Signup from './Components/Signup'
+import Feature from './Components/Feature';
 import './user.css';
 import Abs from './Body-parts/Abs';
 import Biceps from './Body-parts/Biceps';
@@ -80,7 +81,7 @@ section {
           <GlobalStyle />
 
           <Routes>
-            <Route exact path='/' element={<><Home /><About /><Calculate_BMI /><Footer /></>} />
+            <Route exact path='/' element={<><Home /><About /><Feature/> <Footer /></>} />
             <Route path='about' element={<About />} />
             <Route path='directory' element={<><Directory /><Footer /></>} />
             <Route path='diet' element={<Diet />} />
