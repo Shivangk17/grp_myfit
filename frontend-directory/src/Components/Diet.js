@@ -1,11 +1,10 @@
 import React from 'react';
+import Calculate_BMI from './Calculate_BMI';
 
 export default function Diet() {
     return (
-        <div>
-            <br /><br /><br /><br /><br /><br /><br />
-            <h1 style={{ color: 'whitesmoke' }}>Diet
-            </h1>
-        </div>
+        <>
+        <Calculate_BMI/>
+        </>
     )
 }

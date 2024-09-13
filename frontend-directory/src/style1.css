@@ -87,10 +87,11 @@ section {
     }
   }
 
-  .navbar1 Link:hover{
+  .navbar1 Link:hover {
     background-color: var(--red);
     transition: 0.5s;
   }
+
   .navbar1 li {
     display: inline-block;
     padding: 1.5rem 2rem;
@@ -109,12 +110,12 @@ section {
   border-radius: 10%;
   font-variant: small-caps;
   /* display: inline; */
-  /* float: inline-end; */
-  /* &:hover{
+/* float: inline-end; */
+/* &:hover{
     background-color: var(--white);
     color: var(--red);
   }
-} */ 
+} */
 
 
 #menu-btn {
@@ -136,7 +137,7 @@ section {
     display: flex;
     align-items: center;
 
-    .content {
+    .content1 {
       width: 60rem;
 
       span {
@@ -190,7 +191,7 @@ section {
     }
   }
 
-  .content {
+  .content1 {
     flex: 1 1 42rem;
 
     span {
@@ -471,7 +472,7 @@ section {
   .home .slide {
     padding: 2rem 5%;
 
-    .content {
+    .content1 {
       width: 50rem;
 
       h3 {
@@ -519,7 +520,7 @@ section {
       margin-top: 5rem;
     }
 
-    .content .title {
+    .content1 .title {
       font-size: 3rem;
     }
   }
@@ -558,8 +559,6 @@ section {
   width: auto; */
 }
 
-/* <<<<<<< HEAD
-======= */
 /* BOOTSTRAP USE NAI KARVU ETLE CUSTOM PROPERTIES FOR DIRECTORY.JS*/
 .container-fluid {
   width: 100%;
@@ -588,6 +587,97 @@ section {
 .text-center {
   text-align: center;
 }
+/* Features css */
+#features{
+  width:100%;
+  height:80vh;
+  box-sizing: border-box;
+  font-family:'Lato';
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px ;
+  background-color: #000000;
+}
+#features h1{
+  color: #fff;
+  font-size: 3rem;
+}
+/* Feature Box css */
+.a-container{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+
+
+
+
+}
+.a-box{
+  background-color: #000000;
+  width:250px;
+  height: 400px;
+  margin: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.4s ease-in-out;
+  position: relative;
+}
+.a-b-img{
+  width: 100%;
+  height: 60%;
+
+
+}
+.a-b-img img{
+  padding: 5px;
+  margin-top: 40px;
+  width:100%;
+  height: 50%;
+
+
+}
+.a-box:hover{
+  border: 1px solid #FF1414;
+  box-shadow: 2px 2px 12px rgba(184, 0, 0, 0.445);
+}
+.a-b-text{
+  width: 100%;
+  height: 40%;
+  background-color:#000000;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+.a-b-text h2{
+  color: #fff;
+  font-size: 2.2rem;
+}
+.a-b-text p{
+  margin: 0px;
+  color:#ffffffa6;
+  font-size: 1.5rem;
+  font-family:'Lato';
+  display: block;
+  display: -webkit-box;
+  max-width: 80%;
+  margin-top: 5px;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 10px;
+}
+.a-b-text p:hover{
+  color:#ffffff;
+}
+.a-b-text a{
+  margin-top:15px ;
+}
+
 
 @media (min-width: 768px) {
   .col-md-6 {
@@ -666,6 +756,7 @@ section {
     box-shadow: 0 0 3px rgb(0 0 0 / 40%),
       0 0 0 5px #f5f8fa, 5px 0 2px rgb(0 0 0 / 60%);
   }
+  
 }
 
 @media screen and (max-width:600px) {
@@ -674,3 +765,6 @@ section {
   }
 }
 
+/* Feature smade responsive */
+/* Responsive Feature Box */
+/* General Styling */

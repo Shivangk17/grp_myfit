@@ -23,7 +23,7 @@ export default function Home() {
                     className="slide"
                     style={{ background: "url('/images/home-bg-1.jpg') no-repeat" }}
                 >
-                    <div className="content">
+                    <div className="content1">
                         <span>be strong, be fit</span>
                         <h3>Make yourself stronger than your excuses.</h3>
                         <a href="/" className="btn1">get started</a>
@@ -37,7 +37,7 @@ export default function Home() {
                     className="slide"
                     style={{ background: "url('/images/home-bg-4.jpg') no-repeat" }}
                 >
-                    <div className="content">
+                    <div className="content1">
                         <span>be strong, be fit</span>
                         <h3>Make yourself stronger than your excuses.</h3>
                         <a href="/" className="btn1">get started</a>
@@ -48,7 +48,7 @@ export default function Home() {
                     className="slide"
                     style={{ background: "url('/images/home-bg-3.jpg') no-repeat" }}
                 >
-                    <div className="content">
+                    <div className="content1">
                         <span>be strong, be fit</span>
                         <h3>Make yourself stronger than your excuses.</h3>
                         <a href="/" className="btn1">get started</a>
