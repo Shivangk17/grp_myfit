@@ -7,8 +7,8 @@ import { createGlobalStyle } from 'styled-components';
 import { BrowserRouter, Route, Routes, Link, Outlet } from 'react-router-dom';
 import Directory from './Components/Directory';
 import Diet from './Components/Diet';
-import Login from './Components/Login'
-import Signup from './Components/Signup'
+import Login from './Components/Login_2'
+import Signup from './Components/Signup_2'
 import Feature from './Components/Feature';
 import Profile from "./Components/Profile";
 import profile_pic from './profile-pic-2.jpg'
