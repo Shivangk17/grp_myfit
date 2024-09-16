@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import {jwtDecode} from 'jwt-decode'
 
-const Login = () => {
+const Login = ({ setData }) => {
   const[message,setMessage] = useState("")
   const [formData, setFormData] = useState({
     username: '',
@@ -15,16 +16,25 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://127.0.0.1:8000/login/', formData);
-      const { access, username, email, isPremiumUser } = response.data;
-      
-      // Save to localStorage
-      localStorage.setItem('token', access);
-      localStorage.setItem('username', username);
-      localStorage.setItem('email', email);
-      localStorage.setItem('isPremiumUser', isPremiumUser);
-      setMessage(username)
+      const response = await axios.post('http://127.0.0.1:8000/login/', formData,
+        {headers: {
+          'Content-Type': 'application/json',
+        },}
+      );
+
+      const data = response.data;
+
+      if (data.status === 'success') {
+        // Store JWT tokens and user details in localStorage
+        localStorage.setItem('access_token', data.access_token);
+        localStorage.setItem('refresh_token', data.refresh_token);
+        localStorage.setItem('username', data.username);
+        localStorage.setItem('email', data.email);
+        localStorage.setItem('isPremiumUser', data.isPremiumUser);
+        setMessage(data.username+""+data.email+""+data.isPremiumUser)
+      setData({username : data.username , email : data.email , isPremiumUser : data.isPremiumUser})
       console.log('User logged in:', response.data);
+      }
     } catch (error) {
       console.error('Login failed!', error);
     }
