@@ -8,11 +8,10 @@ import { createGlobalStyle } from 'styled-components';
 import { BrowserRouter, Route, Routes, Link, Outlet } from 'react-router-dom';
 import Directory from './Components/Directory';
 import Diet from './Components/Diet';
-import Login from './Components/Login_2'
-import Signup from './Components/Signup_2'
+import Login from './Components/Login'
+import Signup from './Components/Signup'
 import Feature from './Components/Feature';
 import Profile from "./Components/Profile";
-import profile_pic from './profile-pic-2.jpg'
 import './user.css';
 import Abs from './Body-parts/Abs';
 import Biceps from './Body-parts/Biceps';
@@ -110,6 +109,7 @@ const[username,setUsername] = useState(null)
             <Route path='directory' element={<><Directory /><Footer /></>} />
             <Route path='diet' element={<Diet />} />
             <Route path='login' element={<Login setData={setData} />} />
+ 
             <Route path='signup' element={<Signup />} />
 
 
@@ -130,7 +130,7 @@ const[username,setUsername] = useState(null)
             <Route path='trapsmiddle' element={<TrapsMiddle />} />
             <Route path='triceps' element={<Triceps />} />
             {/* For profile */}
-            <Route path='profile' element={<Profile newusername={username}  />} />
+            <Route path='profile' element={<Profile />} />
           </Routes>
           <header className="header">
             <a href="/" className="logo"><span>MY</span>FIT</a>

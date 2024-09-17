@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import Image from '../profile-pic-2.jpg'
 import '../profile.css'
 
-export default function Profile({ newusername}) {
+export default function Profile() {
     const[image,setImage] = useState('')
     const[username,setUsername] = useState('Darsh')
     const[email,setEmail] = useState('darshtrivedi1812@gmail.com')
@@ -12,7 +12,7 @@ export default function Profile({ newusername}) {
     const[weight,setWeight] = useState('70')
     const[age,setAge] = useState('19')
     const[bmi,setBMI] = useState('19')
-
+    var newusername = localStorage.getItem('username')
   return (
     <div>
       <div className='profile-div-1'>
@@ -23,11 +23,7 @@ export default function Profile({ newusername}) {
             {/* </center> */}
             </div>
             <hr className='profile-horizontal-line-1'/>
-            {newusername ?(
-              setUsername(newusername)
-
-            ):(setUsername("Darsh"))}
-            <p className='profile-username'>{username}</p>
+            <p className='profile-username'>{newusername}</p>
             
             {/* <p className='profile-email'>{email}</p> */}
             
