@@ -28,3 +28,11 @@ class LoginSerializer(serializers.Serializer):
         if user and user.is_active:
             return user
         raise serializers.ValidationError("Incorrect credentials")
+
+
+from .models import User_details
+
+class UserDetailsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User_details
+        fields = '__all__'

@@ -51,7 +51,7 @@ export default function Signup() {
 
   return (
     <div>
-      <br/>
+      <br/><br/><br/><br/>
     <section className="signup-page">
       
       <div className="image-section">

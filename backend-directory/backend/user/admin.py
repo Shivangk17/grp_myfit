@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as DefaultUserAdmin
-from .models import User
+from .models import User , User_details
 
 class UserAdmin(DefaultUserAdmin):
     # Fields to display in the admin panel
@@ -23,3 +23,5 @@ class UserAdmin(DefaultUserAdmin):
     )
 
 admin.site.register(User, UserAdmin)
+
+admin.site.register(User_details)

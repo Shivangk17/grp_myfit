@@ -10,10 +10,17 @@
   --light-white: #e0e0e0;
 }
 
-.login-page, .signup-page {
+.login-page{
   display: flex;
   align-items: center;
-  height: 100vh;
+  height: 680px;
+  overflow: hidden; 
+}
+
+.signup-page {
+  display: flex;
+  align-items: center;
+  height: 540px;
   overflow: hidden;
 }
 
@@ -59,14 +66,27 @@
   background-color: var(--black);
 }
 
-.login-body, .signup-body {
+.login-body{
+  padding-top: 10px;
   border: 2px solid var(--red);
   background-color: var(--black);
   padding: 40px;
-  width: 400px; /* Adjusted width */
+  width: 440px; /* Adjusted width */
   border-radius: 15px;
   box-shadow: 0 10px 20px rgba(255, 77, 77, 0.3);
   text-align: center;
+  height: 450px;
+}
+
+.signup-body {
+  border: 2px solid var(--red);
+  background-color: var(--black);
+  padding: 40px;
+  width: 440px; /* Adjusted width */
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(255, 77, 77, 0.3);
+  text-align: center;
+  height: 470px;
 }
 
 .login-header, .signup-header {
@@ -74,6 +94,7 @@
   font-weight: 700;
   color: var(--white);
   margin-bottom: 20px;
+  margin-top: -10px;
 }
 
 .horizontal-line {

@@ -29,3 +29,14 @@ class User(AbstractUser):
 
     def __str__(self):
         return self.username
+
+class User_details(models.Model):
+    username = models.CharField(max_length=255)
+    height = models.IntegerField()
+    weight = models.IntegerField()
+    age = models.IntegerField()
+    gender = models.CharField(max_length=255)
+    bmi = models.DecimalField(decimal_places=2 , max_digits=1000)
+    bmr = models.DecimalField(decimal_places=2 , max_digits=1000)
+    food_type = models.CharField(max_length=255)
+    

@@ -12,6 +12,9 @@ import Login from './Components/Login'
 import Signup from './Components/Signup'
 import Feature from './Components/Feature';
 import Profile from "./Components/Profile";
+import Userdata from './Components/Userdata'
+import Fetchdata from './Components/Fetchuserdata'
+
 import './user.css';
 import Abs from './Body-parts/Abs';
 import Biceps from './Body-parts/Biceps';
@@ -111,7 +114,8 @@ const[username,setUsername] = useState(null)
             <Route path='login' element={<Login setData={setData} />} />
  
             <Route path='signup' element={<Signup />} />
-
+            <Route path='userform' element={<Userdata/>}/>
+            <Route path='fetchuser' element={<Fetchdata/>}/>
 
 
             <Route path='abs' element={<Abs />} />
@@ -148,9 +152,12 @@ const[username,setUsername] = useState(null)
                 <li><Link to="/about">About</Link></li>
                 <li><Link to="/directory">Directory</Link></li>
                 <li><Link to="/diet">Diet</Link></li>
+                <li><Link to="/userform">Form</Link></li>
+                <li><Link to="/fetchuser">User</Link></li>
                 {
                   user ? (
-                  <><li><Link to="/profile" className='page-link'>Profile</Link></li>
+                  <>
+                  {/* <li><Link to="/profile" className='page-link'>Profile</Link></li> */}
                     <li><Link to="/" onClick={handleLogout}>Logout</Link></li></>
                   ):(<li><Link to="/login" className='page-link'>login</Link></li>)
                 }
