@@ -28,7 +28,8 @@ import Shoulders from './Body-parts/Shoulders';
 import Traps from './Body-parts/Traps';
 import TrapsMiddle from './Body-parts/TrapsMiddle';
 import Triceps from './Body-parts/Triceps';
-
+import Payment from './Components/Payment';
+import CheckoutForm from './Components/CheckoutForm';
 
 
 function App() {
@@ -83,7 +84,7 @@ section {
           <GlobalStyle />
 
           <Routes>
-            <Route exact path='/' element={<><Home /><About /><Feature/> <Footer /></>} />
+            <Route exact path='/' element={<><Home /><About /><Feature /> <Footer /></>} />
             <Route path='about' element={<About />} />
             <Route path='directory' element={<><Directory /><Footer /></>} />
             <Route path='diet' element={<Diet />} />
@@ -109,6 +110,10 @@ section {
             <Route path='triceps' element={<Triceps />} />
             {/* For profile */}
             <Route path='profile' element={<Profile />} />
+
+
+            <Route path='payment' element={<Payment />} />
+            <Route path='alternate' element={<CheckoutForm />} />
           </Routes>
           <header className="header">
             <a href="/" className="logo"><span>MY</span>FIT</a>

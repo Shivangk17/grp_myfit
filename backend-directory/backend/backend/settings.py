@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'rest_framework.authtoken',
     'app',
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
@@ -137,3 +138,10 @@ REST_FRAMEWORK = {
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",  # React frontend URL
 ]
+CSRF_TRUSTED_ORIGINS = [
+    'https://api.razorpay.com',
+    'http://localhost:3000'
+]
+CORS_ALLOW_ALL_ORIGINS = True
+RAZORPAY_KEY_ID = 'rzp_test_Ee99kEswio4UyI'
+RAZORPAY_KEY_SECRET = 'dZX5nhfXp33A6irazSLSuGzk'
