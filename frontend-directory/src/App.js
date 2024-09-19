@@ -1,3 +1,4 @@
+import { React, useState, useEffect } from 'react'
 import About from './Components/About';
 // import Navbar from './Components/Navbar';
 import Home from './Components/Home';
@@ -11,7 +12,9 @@ import Login from './Components/Login'
 import Signup from './Components/Signup'
 import Feature from './Components/Feature';
 import Profile from "./Components/Profile";
-import profile_pic from './profile-pic-2.jpg'
+import Userdata from './Components/Userdata'
+import Fetchdata from './Components/Fetchuserdata'
+
 import './user.css';
 import Abs from './Body-parts/Abs';
 import Biceps from './Body-parts/Biceps';
@@ -74,7 +77,28 @@ section {
   }
 }
 `
+  const [user, setData] = useState(null);
+  const [username, setUsername] = useState(null)
+  // Load user details from localStorage when the app is initialized
+  useEffect(() => {
+    const token = localStorage.getItem('access_token');
+    const name = localStorage.getItem('username');
+    const email = localStorage.getItem('email');
+    const isPremiumUser = localStorage.getItem('ispremiumuser')
+    setUsername(localStorage.getItem('username'))
+    if (token && name) {
+      setData({ username, email, isPremiumUser });
+    }
+  }, []);
 
+  const handleLogout = () => {
+    // Clear localStorage and reset user state
+    localStorage.removeItem('token');
+    localStorage.removeItem('username');
+    localStorage.removeItem('email');
+    localStorage.removeItem('ispremiumuser')
+    setData(null);
+  };
 
   return (
     <div className="App">
@@ -88,9 +112,11 @@ section {
             <Route path='about' element={<About />} />
             <Route path='directory' element={<><Directory /><Footer /></>} />
             <Route path='diet' element={<Diet />} />
-            <Route path='login' element={<Login />} />
-            <Route path='signup' element={<Signup />} />
+            <Route path='login' element={<Login setData={setData} />} />
 
+            <Route path='signup' element={<Signup />} />
+            <Route path='userform' element={<Userdata />} />
+            <Route path='fetchuser' element={<Fetchdata />} />
 
 
             <Route path='abs' element={<Abs />} />
@@ -111,7 +137,6 @@ section {
             {/* For profile */}
             <Route path='profile' element={<Profile />} />
 
-
             <Route path='payment' element={<Payment />} />
             <Route path='alternate' element={<CheckoutForm />} />
           </Routes>
@@ -131,9 +156,18 @@ section {
                 <li><Link to="/about">About</Link></li>
                 <li><Link to="/directory">Directory</Link></li>
                 <li><Link to="/diet">Diet</Link></li>
-                <li><Link to="/login" className='page-link'>login</Link></li>
+                <li><Link to="/userform">Form</Link></li>
+                <li><Link to="/fetchuser">User</Link></li>
+                {
+                  user ? (
+                    <>
+                      {/* <li><Link to="/profile" className='page-link'>Profile</Link></li> */}
+                      <li><Link to="/" onClick={handleLogout}>Logout</Link></li></>
+                  ) : (<li><Link to="/login" className='page-link'>login</Link></li>)
+                }
+
                 {/* <li><Link to="/signup" className='page-link'>signup</Link></li> */}
-                <li><Link to="/profile" className='page-link'>profile</Link></li>
+                {/* <li><Link to="/profile" className='page-link'>profile</Link></li> */}
               </ul>
             </nav>
 

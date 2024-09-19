@@ -52,3 +52,130 @@ class VerifyPaymentView(APIView):
         # Update your database, send confirmation email, etc.
         
         return Response({'verified': True})
+    
+
+
+
+
+
+
+
+
+
+
+    
+from rest_framework_simplejwt.tokens import RefreshToken
+from .models import User , User_details
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth import login, authenticate
+import json
+
+# views.py
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework import status
+from .serializers import UserDetailsSerializer
+
+@csrf_exempt
+def signup_view(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        username = data.get('username')
+        email = data.get('email')
+        password = data.get('password')
+        is_premium_user = data.get('isPremiumUser', False)
+
+        if not username or not email or not password:
+            return JsonResponse({'status': 'error', 'message': 'Missing required fields'}, status=400)
+
+        try:
+            user = User.objects.create_user(
+                username=username,
+                email=email,
+                password=password,
+                isPremiumUser=is_premium_user,
+                is_superuser=False,  # Explicitly set is_superuser
+                is_staff=False       # Explicitly set is_staff
+            )
+            login(request, user)
+
+            # Create JWT token
+            refresh = RefreshToken.for_user(user)
+            return JsonResponse({
+                'status': 'success',
+                'message': 'User created successfully',
+                'access_token': str(refresh.access_token),
+                'refresh_token': str(refresh),
+
+            })
+        except Exception as e:
+            return JsonResponse({'status': str(e), 'message': str(e)}, status=400)
+
+    return JsonResponse({'status': 'error', 'message': 'Invalid request method'}, status=405)
+
+
+
+
+@csrf_exempt
+def login_view(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        username = data.get('username')
+        password = data.get('password')
+
+        if not username or not password:
+            return JsonResponse({'status': 'error', 'message': 'Missing required fields'}, status=400)
+
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+
+            # Create JWT tokens
+            refresh = RefreshToken.for_user(user)
+            
+            # Send the JWT tokens, username, email, and isPremiumUser in the response
+            return JsonResponse({
+                'status': 'success',
+                'username': user.username,
+                'email': user.email,
+                'isPremiumUser': user.isPremiumUser,
+                'access_token': str(refresh.access_token),
+                'refresh_token': str(refresh)
+            })
+        else:
+            return JsonResponse({'status': 'error', 'message': 'Invalid credentials'}, status=401)
+
+    return JsonResponse({'status': 'error', 'message': 'Invalid request method'}, status=405)
+
+
+
+
+# View to handle both GET (Read) and POST (Create)
+@api_view(['GET', 'POST'])
+def user_list_create(request):
+    # Handle GET request (read users)
+    # if request.method == 'GET':
+    #     print(request.data)
+    #     users = User_details.objects.all()
+    #     serializer = UserDetailsSerializer(users, many=True)
+    #     return Response(serializer.data)
+
+    # Handle POST request (create user)
+    if request.method == 'POST':
+        serializer = UserDetailsSerializer(data=request.data)
+        print(request.data['username'])
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        print(serializer.errors)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['GET', 'POST'])
+def user_fetch(request):
+    username = request.data['username']
+    if username:
+        user = User_details.objects.filter(username = username)
+        serializer = UserDetailsSerializer(user, many=True)
+        print("s data : ",serializer.data)
+        return Response(serializer.data)

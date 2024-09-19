@@ -1,71 +1,128 @@
-import React, { useState } from 'react'
-import '../user.css'
+import React, { useState } from 'react';
+import '../user.css';
+import Image from '../signup-background.jpeg'
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 export default function Signup() {
+  const navigate = useNavigate()
 
-  const [signupData, setSignupData] = useState({
+  const [formData, setFormData] = useState({
+    username: '',
     email: '',
     password1: '',
-    password2:'',
+    password2: '',
+    isPremiumUser: false,
   });
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setSignupData({
-      ...signupData,
-      [name]: value,
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert('Form submitted:');
+    if (formData.password1 !== formData.password2) {
+      alert("Passwords don't match");
+      navigate('/signup')
+    }
+    const valid_data = {
+      username: formData.username,
+      email: formData.email,
+      password: formData.password1,
+      isPremiumUser: false,
+    }
+    try {
+      const response = await axios.post('http://127.0.0.1:8000/register/', valid_data);
+      console.log('User registered:', response.data);
+      setFormData({
+        username: '',
+        email: '',
+        password1: '',
+        password2: '',
+        isPremiumUser: false,
+      })
+      navigate('/')
+    } catch (error) {
+      console.error('There was an error!', error);
+    }
   };
 
- 
+
   return (
-    <div className='main-page'>
-      <br /><br />
-         {/* <br /><br /><br /><br /><br /><br /><br /> */}
-      <center>
-        <form onSubmit={handleSubmit}>
-        <div className='signup-body' >
-            <p className='div-header'>Signup</p>
-            <br/>
-            <hr className='horizontal-line'/>
-            <br/> <br/><br/><br/>
-            <label className='icon' htmlFor='email'>@ </label><input  type='email' placeholder='email-id' className='input' id="email"
-          name="email"
-          value={signupData.email}
-          onChange={handleChange}
-          required/>
-            <br/> <br/> <br/>
-            <label className='icon' title='between 5 to 10 characters' htmlFor='password1'>🗝</label><input type='password' placeholder='create password ' className='input' minLength={5} maxLength={10} id="password1"
-          name="password1"
-          value={signupData.password1}
-          onChange={handleChange}
-          required/>
-             <br/> <br/> <br/>
-            <label className='icon' htmlFor='password2'>🗝</label><input type='password' placeholder='Re-enter password' className='input' minLength={5} maxLength={10} id="password2"
-          name="password2"
-          value={signupData.password2}
-          onChange={handleChange}
-          required/>
-            <br/> <br/> <br/> 
-            <button className='submit'type='submit' onClick={(e)=>{
-              if(signupData.password1 !== signupData.password2){
-                e.preventDefault()
-                 alert("OOPS! Password didn't matched")
-              }
-            }}>Submit</button>
-            <div className='div-footer'>
-            <br/> <br/> <br/> 
-            <p className='need-help'>Need help?</p>
-            </div>
-            
+    <div>
+      <br /><br /><br /><br />
+      <section className="signup-page">
+
+        <div className="image-section">
+          <img src={Image} alt="Decorative" />
         </div>
-        </form>
-      </center>
+
+        <div className="form-section">
+          <div className="signup-body">
+            <h2 className="signup-header">Signup</h2>
+            <hr className="horizontal-line" />
+            <form onSubmit={handleSubmit}>
+              <div className="input-group">
+                <input
+                  type="text"
+                  placeholder="username"
+                  className="input"
+                  id="username"
+                  name="username"
+                  value={formData.username}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="input-group">
+
+                <input
+                  type="email"
+                  placeholder="email-id"
+                  className="input"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="input-group">
+
+                <input
+                  type="password"
+                  placeholder="create password (6 - 10 characters)"
+                  className="input"
+                  maxLength={10}
+                  minLength={6}
+                  id="password1"
+                  name="password1"
+                  value={formData.password1}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="input-group">
+
+                <input
+                  type="password"
+                  placeholder="re-enter password"
+                  className="input"
+                  maxLength={10}
+                  minLength={6}
+                  id="password2"
+                  name="password2"
+                  value={formData.password2}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <button className="submit" type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
+      </section>
     </div>
-  )
+  );
 }
