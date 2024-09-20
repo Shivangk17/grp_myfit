@@ -5,12 +5,14 @@
 /frontend-directory/node_modules
 /.pnp
 .pnp.js
-
+/backend-directory/backend/app/diet_recommendation_model.joblib
+/backend-directory/backend/app/label_encoders.joblib
+/backend-directory/backend/app/updated_fitness_diet_dataset1.csv
 # testing
 /coverage
 # production
 /build
-
+/venv
 # misc
 .DS_Store
 .env.local
